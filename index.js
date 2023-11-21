@@ -4,6 +4,8 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import userRoutes from './routes/UserRoutes.js'
 import goalRoutes from './routes/GoalRoutes.js'
+import playlistRoutes from './routes/PlaylistRoutes.js'
+import songRoutes from './routes/SongRoutes.js'
 
 const app = express()
 
@@ -31,6 +33,8 @@ connectionObj.on('error', ()=> {
 //ROUTING
 app.use('/api/users', userRoutes)
 app.use('/api/goals', goalRoutes)
+app.use('/api/playlists', playlistRoutes)
+app.use('/api/songs', songRoutes)
 
 app.listen(port, ()=> {
     console.log(`server is running on port ${port}`)
